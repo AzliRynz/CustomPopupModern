@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace 'com.nurazlib.custompopupmodern'
-    compileSdkVersion 33
+    compileSdkVersion 28
 
     defaultConfig {
         minSdkVersion 21
