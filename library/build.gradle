@@ -11,6 +11,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 36
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -24,6 +25,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 afterEvaluate {
@@ -34,12 +42,12 @@ afterEvaluate {
 
                 groupId = 'com.nurazlib.lib'
                 artifactId = 'custompopupmodern'
-                version = '1.0.0.alpha23'
+                version = '1.0.0-alpha23'
 
                 pom {
                     name = 'Custom Popup Modern'
                     description = 'A custom modern popup library for Android'
-                    url = 'https://github.com/KnosTx/CustomPopupModern'
+                    url = 'https://github.com/AzliRynz/CustomPopupModern'
                     
                     licenses {
                         license {
@@ -57,9 +65,9 @@ afterEvaluate {
                     }
 
                     scm {
-                        connection = 'scm:git:github.com/KnosTx/CustomPopupModern.git'
-                        developerConnection = 'scm:git:ssh://github.com/KnosTx/CustomPopupModern.git'
-                        url = 'https://github.com/KnosTx/CustomPopupModern'
+                        connection = 'scm:git:github.com/AzliRynz/CustomPopupModern.git'
+                        developerConnection = 'scm:git:ssh://github.com/AzliRynz/CustomPopupModern.git'
+                        url = 'https://github.com/AzliRynz/CustomPopupModern'
                     }
                 }
             }
@@ -68,7 +76,7 @@ afterEvaluate {
         repositories {
             maven {
                 name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/KnosTx/CustomPopupModern") // Ganti dengan repo GitHub Anda
+                url = uri("https://maven.pkg.github.com/AzliRynz/CustomPopupModern")
 
                 credentials {
                     username = project.findProperty("gpr.user") ?: System.getenv("USERNAME_GITHUB")
